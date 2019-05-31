@@ -2,19 +2,7 @@
 #include<vector>
 #include<queue>
 using namespace std;
-int main(){
-    int vertices;
-    cin>>vertices;
-    int edges;
-    cin>>edges;
-    vector<int> v[vertices];
-    int visited[vertices]={0};
-    for(int a,b,i=0;i<edges;i++){
-        cin>>a>>b;
-        v[a].push_back(b);
-        v[b].push_back(a);
-    }
-    int start=0;
+void BFS(int start,int visited[],vector<int> v[]){
     queue<int> q;
     q.push(start);
     visited[start]=1;
@@ -29,4 +17,19 @@ int main(){
             }
         }
     }
+}
+int main(){
+    int vertices;
+    cin>>vertices;
+    int edges;
+    cin>>edges;
+    vector<int> v[vertices];
+    int visited[vertices]={0};
+    for(int a,b,i=0;i<edges;i++){
+        cin>>a>>b;
+        v[a].push_back(b);
+        v[b].push_back(a);
+    }
+    int start=0;
+    BFS(start,visited,v);
 }
