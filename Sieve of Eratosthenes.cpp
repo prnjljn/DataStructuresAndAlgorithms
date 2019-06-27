@@ -5,7 +5,7 @@
         isComposite[0]=1;
         isComposite[1]=1;
         for(int i=2;i*i<=maxElement;i++){
-            for(int j=2*i;j<=maxElement;j=j+i){
+            for(int j=i*i;j<=maxElement;j=j+i){
                 isComposite[j]=1;
             }
         }
