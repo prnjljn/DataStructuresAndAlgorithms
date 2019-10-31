@@ -9,7 +9,7 @@ void djsktra(int source,vector<vector<int> > path,int n){
        dis[i]=INT_MAX;
    }
    dis[source]=0;
-   pq.push(mp(source,dis[source]));
+   pq.push(mp(dis[source],source));
    while(!pq.empty()){
        int curr=pq.top().second;
         pq.pop();
